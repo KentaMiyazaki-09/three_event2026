@@ -3,29 +3,69 @@
   <%- include("./_question-header.ejs") %>
 
   <div class="question-item question-item--1" data-question-item="1">
-    <h2 class="question-item__ttl">オフの日の過ごし方は？</h2>
-    <ul class="question-item__list question-item__list--2column question-item__list--row-pc">
+
+    <div class="question-item__header">
+      <h2 class="question-item__header__ttl">一番印象に残ったゾーン（エリア）は？</h2>
+      <p class="question-item__header__ttl-en">Which zone (area) was the most memorable?</p>
+    </div>
+    <ul class="question-item__list question-item__list--2column question-item__list--row">
       <%
         const Q1List = [
-          { ttl: '自然の中で<br class="is-sp">リラックス', point: "1" },
-          { ttl: 'お家で<br class="is-sp">ゆっくり過ごす', point: "1" },
-          { ttl: '買い物や<br>アクティビティを楽しむ', point: "-1" },
-          { ttl: '趣味や習い事で<br>気分をリセット', point: "0" },
+          {
+            imgBefore: "1_1.jpg",
+            imgAfter: "1_2.jpg",
+            ttl: 'ZONE1（ジャングル室）',
+            en: "ZONE1（Wet Tropics Garden）",
+            point: "1"
+          },
+          {
+            imgBefore: "2_1.jpg",
+            imgAfter: "2_2.jpg",
+            ttl: 'ZONE2（有用作物室）',
+            en: "ZONE2（Useful Tropical Plants Garden）",
+            point: "1"
+          },
+          {
+            imgBefore: "3_1.jpg",
+            imgAfter: "3_2.jpg",
+            ttl: 'ZONE3（砂漠サバンナ室）',
+            en: "ZONE3（Dry Tropics Garden）",
+            point: "-1"
+          },
+          {
+            imgBefore: "4_1.jpg",
+            imgAfter: "4_2.jpg",
+            ttl: 'ZONE4（ラン・アナナス室）',
+            en: "ZONE4（Orchids & Bromeliads Garden）",
+            point: "0"
+          },
         ]
       %>
 
       <% Q1List.forEach(element => { %>
           <li>
-            <button type="button" data-point="<%- element.point %>" class="button">
-              <span><%- element.ttl %></span>
-            </button>
+            <div type="button" data-point="<%- element.point %>" class="button">
+              <div class="button__thumb">
+                <img class="button__thumb__1" src="<%= IMAGE_PATH %>question/<%- element.imgBefore %>" alt=""><img src="" alt="">
+                <img class="button__thumb__2" src="<%= IMAGE_PATH %>question/<%- element.imgAfter %>" alt=""><img src="" alt="">
+              </div>
+              <div class="button__text">
+                <p class="button__text__ja"><%- element.ttl %></p>
+                <p class="button__text__en"><%- element.en %></p>
+              </div>
+
+              <div class="button__check"></div>
+            </div>
           </li>
       <% });%>
     </ul>
   </div>
 
   <div class="question-item question-item--2" data-question-item="2">
-    <h2 class="question-item__ttl">今の気分・状態に近いのは？</h2>
+    <div class="question-item__header">
+      <h2 class="question-item__header__ttl">今の気分・状態に近いのは？</h2>
+      <p class="question-item__header__ttl-en">Which best describes your current mood or state?</p>
+    </div>
     <%
       const Q2List = [
         { ttl: "大切な人と<br>時間を過ごしたい", point: "-4" },
@@ -49,7 +89,10 @@
   </div>
 
   <div class="question-item question-item--3" data-question-item="3">
-    <h2 class="question-item__ttl">次の休みに過ごしたい場所は？</h2>
+     <div class="question-item__header">
+      <h2 class="question-item__header__ttl">次の休みに過ごしたい場所は？</h2>
+      <p class="question-item__header__ttl-en">Where do you want to go on your next day off?</p>
+    </div>
     <%
       const Q3List = [
         { ttl: "暖かな日差しが<br>降り注ぐ海辺", point: "-1" },
