@@ -59,3 +59,15 @@
     letter-spacing: -0.17em;
   }
 }
+
+
+// test
+.test {
+  z-index: 999;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  > p {
+    font-size: 14px;
+  }
+}
