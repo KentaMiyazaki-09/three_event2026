@@ -20,7 +20,6 @@ class chartApp {
   constructor() {
     // この２つでresultが変化する
     this.totalPoint = []; // 現在の合計ポイント -6~６
-    this.favo = 0; // 香りの好み 1to3
 
     // result
     this.resultID = "";
@@ -31,9 +30,13 @@ class chartApp {
     // 出現させる画面のトリガー
     this.isStart = true; // スタート画面の表示
     this.isQuestion = false; // 質問画面の表示
-    this.questionNum = 0; // 現在の質問 1to4
+    this.questionNum = 0; // 現在の質問 1to3
     this.loading = false;
     this.isResult = false; // result画面の表示
+
+    this.isStart = false; // スタート画面の表示
+    this.isQuestion = true; // 質問画面の表示
+    this.questionNum = 3; // 現在の質問 1to3
 
     // 前に戻るトリガー
     this.prevPoint = 0;

@@ -52,18 +52,6 @@
       translate: 0 0;
     }
 
-    &:hover {
-      &::before {
-        opacity: 1;
-      }
-      &::after {
-        opacity: 0;
-      }
-      .start-button__triangle {
-        translate: 2px 0;
-      }
-    }
-
     &.is-hover {
       &::before {
         opacity: 1;

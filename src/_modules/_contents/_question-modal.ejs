@@ -8,7 +8,7 @@
       <h2 class="question-item__header__ttl">一番印象に残ったゾーン（エリア）は？</h2>
       <p class="question-item__header__ttl-en">Which zone (area) was the most memorable?</p>
     </div>
-    <ul class="question-item__list question-item__list--2column question-item__list--row">
+    <ul class="question-item__list question-item__list--row">
       <%
         const Q1List = [
           {
@@ -44,7 +44,7 @@
 
       <% Q1List.forEach(element => { %>
           <li>
-            <div type="button" data-point="<%- element.point %>" class="button">
+            <div type="button" data-point="<%- element.point %>" class="button button--column">
               <div class="button__thumb">
                 <img class="button__thumb__1" src="<%= IMAGE_PATH %>question/<%- element.imgBefore %>" alt=""><img src="" alt="">
                 <img class="button__thumb__2" src="<%= IMAGE_PATH %>question/<%- element.imgAfter %>" alt=""><img src="" alt="">
@@ -53,7 +53,6 @@
                 <p class="button__text__ja"><%- element.ttl %></p>
                 <p class="button__text__en"><%- element.en %></p>
               </div>
-
               <div class="button__check"></div>
             </div>
           </li>
@@ -68,21 +67,49 @@
     </div>
     <%
       const Q2List = [
-        { ttl: "大切な人と<br>時間を過ごしたい", point: "-4" },
-        { ttl: "とにかく<br>たっぷり眠りたい", point: "-4", },
-        { ttl: "何か楽しいこと<br>を見つけたい", point: "4", },
-        { ttl: " アクティブに動いて<br>リフレッシュしたい", point: "4", },
-        { ttl: "ひと息ついて<br>深呼吸したい", point: "0", },
-        { ttl: '心のバランスを<br class="is-sp">整えたい', point: "0", },
+        {
+          ttl: "大切な人と時間を<br>過ごしたい",
+          en: "Share Moments with<br>Special people",
+          point: "-4"
+        },
+        {
+          ttl: "とにかくたっぷり<br>眠りたい",
+          en: "Sleep Deeply and Fully",
+          point: "-4",
+        },
+        {
+          ttl: "何か楽しいこと<br>を見つけたい",
+          en: "Discover Something Fun",
+          point: "4",
+        },
+        {
+          ttl: " アクティブに動いて<br>リフレッシュした",
+          en: "Refresh Through Movement",
+          point: "4",
+        },
+        {
+          ttl: "ひと息ついて<br>深呼吸したい",
+          en: "Take a Moment to<br>Breathe Deeply",
+          point: "0",
+        },
+        {
+          ttl: '心のバランスを<br>整えた',
+          en: "Rebalance Mind<br>and Soul",
+          point: "0",
+        },
       ]
     %>
 
     <ul class="question-item__list question-item__list--2column">
       <% Q2List.forEach(element => { %>
         <li>
-          <button type="button" data-point="<%- element.point %>" class="button">
-            <span><%- element.ttl %></span>
-          </button>
+          <div type="button" data-point="<%- element.point %>" class="button button--row">
+            <div class="button__check"></div>
+            <div class="button__text">
+              <p class="button__text__ja"><%- element.ttl %></p>
+              <p class="button__text__en"><%- element.en %></p>
+            </div>
+          </div>
         </li>
       <% });%>
     </ul>
@@ -95,20 +122,48 @@
     </div>
     <%
       const Q3List = [
-        { ttl: "暖かな日差しが<br>降り注ぐ海辺", point: "-1" },
-        { ttl: "風が心地よい森林", point: "-1" },
-        { ttl: "繁華街などの夜の街", point: "1" },
-        { ttl: "エキゾチックな<br>異国の地", point: "1" },
-        { ttl: "静かな自分の家", point: "0" },
-        { ttl: "雨あがりの庭", point: "0" },
+        {
+          ttl: "温泉旅館",
+          en: "Traditional Hot Spring<br>Inn (Ryokan)",
+          point: "-1"
+        },
+        {
+          ttl: "美術館や博物館",
+          en: "Museums",
+          point: "-1"
+        },
+        {
+          ttl: "自然の中を<br>ハイキング",
+          en: "Hiking in Nature",
+          point: "1"
+        },
+        {
+          ttl: "テーマパークなど<br>賑やかな場所",
+          en: "Theme Parks or<br>Lively Spots",
+          point: "1"
+        },
+        {
+          ttl: "自分の家",
+          en: "Relaxing at Home",
+          point: "0"
+        },
+        {
+          ttl: "お寺で座禅体験",
+          en: "Zen Meditation<br>at a Temple",
+          point: "0"
+        },
       ]
     %>
     <ul class="question-item__list question-item__list--2column">
       <% Q3List.forEach(element => { %>
         <li>
-          <button type="button" data-point="<%- element.point %>" class="button">
-            <span><%- element.ttl %></span>
-          </button>
+          <div type="button" data-point="<%- element.point %>" class="button button--row">
+            <div class="button__check"></div>
+            <div class="button__text">
+              <p class="button__text__ja"><%- element.ttl %></p>
+              <p class="button__text__en"><%- element.en %></p>
+            </div>
+          </div>
         </li>
       <% });%>
     </ul>
