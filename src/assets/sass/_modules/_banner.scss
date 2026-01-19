@@ -1,0 +1,20 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .banner {
+    display: block;
+    @include m.pc{
+      max-width: 345px;
+      margin: auto;
+      transition: opacity 0.3s ease;
+      opacity: 1;
+      .banner__arrow__icon {
+        transition: right 0.3s ease;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

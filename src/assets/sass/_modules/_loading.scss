@@ -1,0 +1,48 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .loading {
+    width: 100%;
+    &__ttl {
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      margin-bottom: 50px;
+      @include m.pc{
+        font-size: 18px;
+        margin-bottom: 75px;
+      }
+
+      &__shadow {
+        display: inline-block;
+        color: rgba(0, 0, 0, 0);
+        background: linear-gradient(to right, #051A1F 50%, rgba(226, 169, 192, 0.302) 50%) 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 200% 100%;
+        transition: background-position 2.5s linear;
+        background-position: 100% 100%;
+      }
+    }
+
+    &__slider {
+      pointer-events: none;
+      &.embla {
+        overflow: hidden;
+      }
+      .embla__container {
+        display: flex;
+      }
+      .embla__slide {
+        flex: 0 0 165%;
+        min-width: 0;
+        @include m.pc{
+          flex: 0 0 88%;
+        }
+      }
+    }
+  }
+
+
+}

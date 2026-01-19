@@ -1,0 +1,62 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .goToBtn {
+    z-index: 9;
+    position: fixed;
+    bottom: 30px;
+    display: block;
+    text-align: center;
+    color: v.$white;
+    letter-spacing: 0.07em;
+    border: 0.5px solid #FFF;
+    background: rgba(75, 75, 75, 0.50);
+    backdrop-filter: blur(20px);
+    padding: 15px 20px;
+
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    pointer-events: auto;
+    &.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @include m.sp{
+      bottom: 15px;
+      left: 25px;
+      width: calc(100% - 50px);
+    }
+    @include m.pc {
+      display: none;
+  
+      max-width: 313px;
+      width: 100%;
+      left: 50%;
+      translate: -50% 0;
+      bottom: 50px;
+      transition: opacity 0.3s ease;
+      opacity: 1;
+      &:hover {
+        opacity: 0.7;
+        .link-btn__icon {
+          right: 8px;
+        }
+      }
+    }
+
+    &__inner {
+      position: relative;
+      display: inline-block;
+    }
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: -18px;
+      width: 8px;
+      height: 6px;
+      translate: 0 -50%;
+    }
+  }
+}

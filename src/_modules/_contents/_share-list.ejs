@@ -1,0 +1,29 @@
+<%
+  const URL = encodeURIComponent(`https://threecosmetics.com/brand/news/fragrance-finder?${params}`)
+  const TEXT = encodeURIComponent(`あなたにおすすめの香りは...${ttl}　FRAGRANCE FINDER - ESSENTIAL SCENTS R | THREE（スリー）`)
+
+  const Fhref = `http://www.facebook.com/share.php?u=${URL}` /* FBはテキストシェアできない */
+  const Xhref = `http://x.com/share?url=${URL}&amp;text=${TEXT}`
+  const Lhref = `http://line.me/R/msg/text/?${TEXT}%0A${URL}`
+%>
+
+<div class="share-list">
+  <p class="share-list__ttl">SHARE</p>
+  <div class="share-list__container">
+    <a class="share-list__item share-list__item--fb" href="<%- Fhref %>" target="_blank" rel="noopener noreferrer">
+      <img src="<%= IMAGE_PATH %>icon_fb.png" alt="">
+    </a>
+
+    <a class="share-list__item share-list__item--x" href="<%- Xhref %>" target="_blank" rel="noopener noreferrer">
+      <img src="<%= IMAGE_PATH %>icon_x.png" alt="">
+    </a>
+
+    <a class="share-list__item share-list__item--line" href="<%- Lhref %>">
+      <img src="<%= IMAGE_PATH %>icon_line.svg" alt="">
+    </a>
+
+    <button type="button" class="share-list__item share-list__item--copy" data-url="<%- URL %>">
+      <img src="<%= IMAGE_PATH %>icon_copy.svg" alt="">
+    </button>
+  </div>
+</div>

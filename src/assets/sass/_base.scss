@@ -1,0 +1,28 @@
+@use './_mixin' as m;
+@use './variables' as v;
+
+@include m.css_wrapper {
+  font-size: 12px;
+  color: #4B4B4B;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+
+  font-family: "akzidenz-grotesk","Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", arial, YuGothic, 游ゴシック, Meiryo, メイリオ, sans-serif;
+
+  // 先方のリセットCSSを上書き
+  @include m.pc {
+    a {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  button {
+    opacity: 1;
+  }
+}
+
+.foot_contents {
+  display: none !important;
+}

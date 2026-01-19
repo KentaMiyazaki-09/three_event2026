@@ -1,0 +1,110 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .start {
+    z-index: 11;
+    position: relative;
+
+    &__header {
+      margin-bottom: 40px;
+      &__ttl {
+        text-align: center;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        &__three {
+          width: 125px;
+          margin-bottom: 30px;
+          @include m.pc{
+            width: 250px;
+            margin-bottom: 50px;
+          }
+        }
+        &__en {
+          font-size: 20px;
+          margin-bottom: 15px;
+          display: inline-block;
+          @include m.pc{
+            font-size: 27px;
+          }
+        }
+        &__ja {
+          font-size: 14px;
+          display: inline-block;
+          @include m.pc{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    &__container {
+      margin-bottom: 40px;
+      letter-spacing: 0.1em;
+      &__ttl {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+        @include m.pc{
+          font-size: 20px;
+        }
+      }
+      &__lead {
+        text-align: center;
+        line-height: 1.75;
+        margin-bottom: 30px;
+        @include m.pc{
+          font-size: 15px;
+        }
+      }
+    }
+
+    &__link-text {
+      font-size: 11px;
+      line-height: 1;
+      display: block;
+    }
+
+    &.has-animation {
+      .start__header__ttl__three,
+      .start__header__ttl__en,
+      .start__header__ttl__ja,
+      .start__container__ttl,
+      .start__container__lead,
+      .start-button,
+      .another-links {
+        opacity: 0;
+        translate: 0 10px;
+      }
+
+      &.is-loaded {
+        .start__header__ttl__three,
+        .start__header__ttl__en,
+        .start__header__ttl__ja,
+        .start__container__ttl,
+        .start__container__lead,
+        .start-button,
+        .another-links {
+          opacity: 1;
+          translate: 0 0px;
+          transition: opacity 1s ease, translate 1s ease;
+        }
+        .start__header__ttl__three {
+          transition-delay: 0.5s;
+        }
+        .start__header__ttl__en,
+        .start__header__ttl__ja {
+          transition-delay: 0.9s;
+        }
+        .start__container__ttl,
+        .start__container__lead {
+          transition-delay: 1.3s;
+        }
+        .start-button,
+        .another-links {
+          transition-delay: 1.7s;
+        }
+      }
+    }
+  }
+}

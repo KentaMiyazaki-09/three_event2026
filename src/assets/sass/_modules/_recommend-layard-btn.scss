@@ -1,0 +1,54 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .recommend-layard-btn-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .recommend-layard-btn {
+    display: inline-block;
+    position: relative;
+
+    @keyframes animation_arrow {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      50% {
+        transform: translate(0, 7px);
+        opacity: 0;
+      }
+      51% {
+        transform: translate(0, -7px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+    &__arrow {
+      width: 18px;
+      animation: animation_arrow 2s linear 0s infinite;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    &__text {
+
+    }
+
+    @include m.pc{
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

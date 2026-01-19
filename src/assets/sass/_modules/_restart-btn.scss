@@ -1,0 +1,33 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .restart-btn {
+    position: relative;
+    left: -20px;
+    line-height: 1;
+    display: inline-block;
+
+    &__text {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    > img {
+      z-index: 9;
+      position: absolute;
+      top: -1px;
+      right: -20px;
+      width: 13px;
+      display: block;
+    }
+
+    @include m.pc{
+      transition: opacity 0.3s ease;
+      opacity: 1;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

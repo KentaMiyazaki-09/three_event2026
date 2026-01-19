@@ -1,0 +1,110 @@
+<div id="question-modal" class="question-modal has-state">
+
+  <%- include("./_question-header.ejs") %>
+
+  <div class="question-item question-item--1" data-question-item="1">
+    <h2 class="question-item__ttl">オフの日の過ごし方は？</h2>
+    <ul class="question-item__list question-item__list--2column question-item__list--row-pc">
+      <%
+        const Q1List = [
+          { ttl: '自然の中で<br class="is-sp">リラックス', point: "1" },
+          { ttl: 'お家で<br class="is-sp">ゆっくり過ごす', point: "1" },
+          { ttl: '買い物や<br>アクティビティを楽しむ', point: "-1" },
+          { ttl: '趣味や習い事で<br>気分をリセット', point: "0" },
+        ]
+      %>
+
+      <% Q1List.forEach(element => { %>
+          <li>
+            <button type="button" data-point="<%- element.point %>" class="button">
+              <span><%- element.ttl %></span>
+            </button>
+          </li>
+      <% });%>
+    </ul>
+  </div>
+
+  <div class="question-item question-item--2" data-question-item="2">
+    <h2 class="question-item__ttl">今の気分・状態に近いのは？</h2>
+    <%
+      const Q2List = [
+        { ttl: "大切な人と<br>時間を過ごしたい", point: "-4" },
+        { ttl: "とにかく<br>たっぷり眠りたい", point: "-4", },
+        { ttl: "何か楽しいこと<br>を見つけたい", point: "4", },
+        { ttl: " アクティブに動いて<br>リフレッシュしたい", point: "4", },
+        { ttl: "ひと息ついて<br>深呼吸したい", point: "0", },
+        { ttl: '心のバランスを<br class="is-sp">整えたい', point: "0", },
+      ]
+    %>
+
+    <ul class="question-item__list question-item__list--2column">
+      <% Q2List.forEach(element => { %>
+        <li>
+          <button type="button" data-point="<%- element.point %>" class="button">
+            <span><%- element.ttl %></span>
+          </button>
+        </li>
+      <% });%>
+    </ul>
+  </div>
+
+  <div class="question-item question-item--3" data-question-item="3">
+    <h2 class="question-item__ttl">次の休みに過ごしたい場所は？</h2>
+    <%
+      const Q3List = [
+        { ttl: "暖かな日差しが<br>降り注ぐ海辺", point: "-1" },
+        { ttl: "風が心地よい森林", point: "-1" },
+        { ttl: "繁華街などの夜の街", point: "1" },
+        { ttl: "エキゾチックな<br>異国の地", point: "1" },
+        { ttl: "静かな自分の家", point: "0" },
+        { ttl: "雨あがりの庭", point: "0" },
+      ]
+    %>
+    <ul class="question-item__list question-item__list--2column">
+      <% Q3List.forEach(element => { %>
+        <li>
+          <button type="button" data-point="<%- element.point %>" class="button">
+            <span><%- element.ttl %></span>
+          </button>
+        </li>
+      <% });%>
+    </ul>
+  </div>
+
+  <div class="question-item question-item--4" data-question-item="4">
+    <h2 class="question-item__ttl">好みの香りの系統は？</h2>
+     <%
+      const Q4List = [
+        { ttl: "フローラル・<br>ウッディ系", favo: "1" },
+        { ttl: "フルーティ・<br>オリエンタル系", favo: "2" },
+        { ttl: "ナチュラル・<br>アーシー系", favo: "3" },
+      ]
+    %>
+
+    <ul class="question-item__list question-item__list--1column question-item__list--row-pc">
+      <% Q4List.forEach(element => { %>
+        <li>
+          <button type="button" data-favo="<%- element.favo %>" class="button">
+            <span><%- element.ttl %></span>
+          </button>
+        </li>
+      <% });%>
+    </ul>
+  </div>
+
+  <div class="prev-btn-box">
+    <button type="button" id="prev-btn" class="prev-btn">
+      <img src="<%= IMAGE_PATH %>icon_arrow.svg" alt="">
+      前の質問に戻る
+    </button>
+  </div>
+
+  <!-- <div id="loading" class="question-item question-item--loading">
+    <%## include("./_loading.ejs") %>
+  </div> -->
+
+  <%- include("./_logo.ejs", {
+    id: "question-footer-logo",
+    className: 'logo--question-modal-footer'
+  }) %>
+</div>

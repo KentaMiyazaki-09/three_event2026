@@ -1,0 +1,143 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .layered {
+    border: 1px solid #E3E3E3;
+    background: rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(15px);
+    padding: 40px 20px;
+    margin-bottom: 50px;
+    @include m.pc{
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 60px 50px;
+    }
+  }
+
+  .layered__ttl {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 40px;
+    @include m.pc{
+      font-size: 17px;
+    }
+  }
+
+  .layered__name {
+    text-align: center;
+    margin-bottom: 25px;
+
+    &--woody {
+      .layered__name__container::after {
+        background-color: #D4C09E;
+      }
+    }
+    &--spicy {
+      .layered__name__container::after {
+        background-color: #A5A281;
+      }
+    }
+    &--clean {
+      .layered__name__container::after {
+        background-color: #A8A69B;
+      }
+    }
+    &--floral {
+      .layered__name__container::after {
+        background-color: #DFBBCA;
+      }
+    }
+    &--fruity {
+      .layered__name__container::after {
+        background-color: #949DB2;
+      }
+    }
+    &--earthy {
+      .layered__name__container::after {
+        background-color: #A28F77;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+      padding-left: 14px;
+      position: relative;
+      > img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        translate: 0 -50%;
+        width: 9px;
+      }
+    }
+    &__container {
+      display: inline-block;
+      position: relative;
+      padding: 0 16px 15px;
+      line-height: 1;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-color: #DBC4D4;
+      }
+    }
+  }
+
+  .layered__catch {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .layered__img {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #E3E3E3;
+    margin-bottom: 40px;
+    @include m.pc{
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+    > img {
+      display: block;
+      margin: 0 auto 25px;
+    }
+    @include m.sp{
+      > img {
+        width: 55%;
+      }
+    }
+    @include m.pc{
+      > img {
+        max-width: 225px;
+      }
+    }
+
+    &__caption {
+      text-align: center;
+      font-size: 11px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .layered__link {
+    @include m.pc{
+      max-width: 150px;
+      margin: auto;
+    }
+  }
+
+  .layered__lead {
+    font-size: 11px;
+    margin-bottom: 20px;
+    @include m.pc{
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+}

@@ -1,0 +1,48 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .link-btn {
+    display: block;
+    text-align: center;
+    position: relative;
+    background-color: rgba(74, 74, 74, 1.0);
+    line-height: 1.4;
+    color: v.$white;
+    letter-spacing: 0.07em;
+    font-size: 11px;
+    padding: 15px 3px;
+    border: 0.5px solid #fff;
+    @include m.pc {
+      font-size: 12px;
+      transition: opacity 0.3s ease;
+      &:hover {
+        .link-btn__icon {
+          right: 12px;
+        }
+      }
+    }
+
+    &__inner {
+      z-index: 10;
+      position: relative;
+      width: 100%;
+      display: block;
+    }
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      height: 8px;
+      translate: 0 -50%;
+      @include m.sp {
+        right: 14px;
+        height: 6px;
+      }
+      @include m.pc {
+        transition: right 0.5s ease;
+      }
+    }
+
+  }
+}

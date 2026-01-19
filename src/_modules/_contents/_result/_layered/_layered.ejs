@@ -1,0 +1,29 @@
+<div class="layered">
+  <h3 class="layered__ttl">おすすめのレイヤード</h3>
+  <div class="layered__name layered__name--<%- type %>">
+    <p class="layered__name__container">
+      <span class="layered__name__text">
+        <img src="<%= IMAGE_PATH %>icon_close.svg" alt="">
+        <%- ttl %>
+      </span>
+    </p>
+  </div>
+  <p class="layered__catch"><%- catchText %></p>
+  <div class="layered__img">
+    <img src="<%= IMAGE_PATH %>layered/<%- img %>" alt="">
+    <p class="layered__img__caption">
+      <span class="layered__img__caption__inner"><%- imgCaption %></span>
+    </p>
+    <div class="layered__link">
+      <%- include("../../_link.ejs", {
+        href
+      }) %>
+    </div>
+  </div>
+
+  <p class="layered__lead">マインドに合わせて纏う、自由自在なレイヤリング<br>単品はもちろん、自由に組み合わせることで新しい香りが生まれ、<br class="is-pc">多角的に「呼吸」と「マインド」に寄り添います。</p>
+
+  <%- include("../../_banner.ejs", {
+    href: "https://www.threecosmetics.com/onlineshop/e/eT074/"
+  }) %>
+</div>

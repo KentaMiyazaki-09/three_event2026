@@ -1,0 +1,38 @@
+<div class="recommend">
+  <div class="recommend__ttl">
+    <p>あなたにおすすめの香りは...</p>
+    <h2><%= ttl %></h2>
+  </div>
+
+  <div class="recommend__info-header is-sp">
+    <div class="recommend__info-header__tag-box">
+      <p class="recommend__info-header__tag"><%- header.tag %></p>
+    </div>
+    <h3 class="recommend__info-header__ttl"><%- header.ttl %></h3>
+  </div>
+
+  <div class="recommend__img">
+    <img class="recommend__img__item" src="<%= IMAGE_PATH %>item/<%- img.item %>" alt="">
+    <img class="recommend__img__element" src="<%= IMAGE_PATH %>item/<%- img.element %>" alt="">
+  </div>
+
+  <div class="recommend__info">
+    <div class="recommend__info-header is-pc">
+      <div class="recommend__info-header__tag-box">
+        <p class="recommend__info-header__tag"><%- header.tag %></p>
+      </div>
+      <h3 class="recommend__info-header__ttl"><%- header.ttl %></h3>
+    </div>
+
+    <p class="recommend__info__lead"><%- info.lead %></p>
+    <p class="recommend__info__price"><%- info.price %></p>
+    <div class="recommend__info__links">
+      <%- include("../../_link.ejs", {
+        href: info.links10ml
+      }) %>
+    </div>
+
+    <%- include("../../_recommend-layard-btn.ejs") %>
+
+  </div>
+</div>

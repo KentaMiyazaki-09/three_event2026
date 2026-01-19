@@ -1,0 +1,19 @@
+<%
+  const ENVType = process.env.NODE_ENV
+
+  IMAGE_PATH = process.env.NODE_IMAGE_PATH
+
+  JS_PATH = ENVType === 'production' ? '/cms/themes/base_20160616/js/individual/' : '/assets/js/'
+
+  CSS_PATH = ENVType === 'production' ? '/cms/themes/base_20160616/css/individual/' : '/assets/css/'
+%>
+
+<% if(ENVType === 'development') {-%>
+  <%- include('./_modules/_header.ejs') %>
+<%} -%>
+
+<%- include('./_modules/_contents.ejs') %>
+
+<% if(ENVType === 'development') {-%>
+<%- include('./_modules/_footer.ejs') %>
+<%} -%>

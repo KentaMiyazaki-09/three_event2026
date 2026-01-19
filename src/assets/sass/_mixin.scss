@@ -1,0 +1,99 @@
+@use './variables' as v;
+
+// アニメーション
+@mixin aniamtion_before {
+  opacity: 0;
+  translate: 0 10px;
+  transition: opacity 1s ease, translate 1s ease;
+}
+@mixin aniamtion_after {
+  opacity: 1;
+  translate: 0 0px;
+}
+
+// css in project name
+@mixin css_wrapper {
+  .three-25FC {
+    min-height: 100svh;
+    // opacity: 0; CMS上、cssが読み込まれるのがhtmlの一番最後なので_contents.ejsに反映
+    
+    @content;
+
+    &.is-loaded {
+      transition: opacity 0.3s ease !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+// pc max width
+@mixin pc_max_width {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1140px;
+  margin: auto;
+}
+
+// animation
+@mixin animation_fade_before {
+  opacity: 0;
+  translate: 0 10px;
+  transition: opacity 1.0s ease, translate 1.0s ease;
+}
+@mixin animation_fade_after {
+  opacity: 1;
+  translate: 0 0px;
+}
+
+@keyframes animation_fade_lineup {
+  0%{ opacity: 0; }
+  15%{ opacity: 1; } // 1.5s
+  60%{ opacity: 1; } // 6.0s
+  75%{ opacity: 0; } // 7.5s
+  100%{ opacity: 0; } // 10s
+}
+
+// ブラー出現アニメーション
+@mixin animation_blur_before {
+  opacity: 0;
+  translate: 0 6px;
+  filter: blur(15px);
+  transition: opacity 2s ease, translate 0.8s ease, filter 1.2s ease;
+}
+@mixin animation_blur_after {
+  opacity: 1;
+  translate: 0 0px;
+  filter: blur(0px);
+}
+
+// pcサイズ
+@mixin pc {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+// spサイズ
+@mixin sp {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// font size
+@function get_vw($size, $viewport: 375) {
+  $rate: calc(100 / $viewport);
+  $calc: round($rate * $size * 1vw * 10);
+  $calc2: calc($calc / 10);
+  @return $calc2;
+}
+@mixin fz_vw($font_size) {
+  @include sp {
+    font-size: $font_size * 1px;
+    font-size: get_vw($font_size);
+  }
+  @include pc {
+    font-size: $font_size * 1px;
+    font-size: get_vw($font_size, v.$pcMaxWidth);
+  }
+}

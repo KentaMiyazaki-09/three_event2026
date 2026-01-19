@@ -1,0 +1,38 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .another-links {
+    display: flex;
+    justify-content: center;
+    > li {
+      &:not(:last-child) {
+        padding-right: 25px;
+        margin-right: 25px;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          translate: 0 -50%;
+          width: 1px;
+          height: 8px;
+          background-color: #4B4B4B;
+        }
+      }
+
+      > a {
+        display: inline-block;
+        font-size: 11px;
+        @include m.pc{
+          transition: opacity 0.3s ease;
+          opacity: 1;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

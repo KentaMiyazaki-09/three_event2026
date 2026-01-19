@@ -1,0 +1,88 @@
+@use "../variables" as v;
+@use "../mixin" as m;
+
+@include m.css_wrapper {
+  .start-button {
+    width: 250px;
+    height: 49px;
+    display: block;
+    margin: auto;
+    backdrop-filter: blur(7.5px);
+    border: 0.5px solid #FFF;
+
+    font-size: 14px;
+    color: #fff;
+
+    z-index: 1;
+    position: relative;
+
+    @include m.pc{
+      width: 280px;
+      height: 54px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(92deg, rgba(75, 75, 75, 0.35) 0%, rgba(75, 75, 75, 0.70) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(92deg, rgba(75, 75, 75, 0.70) 0%, rgba(75, 75, 75, 0.35) 100%);
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    &__triangle {
+      z-index: 9;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 25px;
+      width: 7px;
+
+      transition: translate 0.3s ease;
+      translate: 0 0;
+    }
+
+    @include m.pc{
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+        &::after {
+          opacity: 0;
+        }
+        .start-button__triangle {
+          translate: 2px 0;
+        }
+      }
+    }
+
+    &.is-hover {
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        opacity: 0;
+      }
+      .start-button__triangle {
+        translate: 2px 0;
+      }
+    }
+
+  }
+}

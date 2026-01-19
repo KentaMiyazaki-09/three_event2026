@@ -1,0 +1,61 @@
+@use "./_reset";
+@use "./_base";
+@use "./mixin" as m;
+
+@use "./_modules/_gradations";
+@use "./_modules/_toast";
+
+// @use "./_modules/_loading";
+
+@use "./_modules/_start-modal";
+@use "./_modules/_start";
+@use "./_modules/_start-button";
+
+@use "./_modules/_question-modal";
+@use "./_modules/_question-header";
+@use "./_modules/_question-item";
+
+@use "./_modules/_recommend";
+@use "./_modules/_layered";
+@use "./_modules/_banner";
+
+@use "./_modules/_button";
+@use "./_modules/_goToBtn";
+@use "./_modules/_link-btn";
+@use "./_modules/_restart-btn";
+@use "./_modules/_share-list";
+@use "./_modules/_link";
+
+@use "./_modules/_result";
+@use "./_modules/_result-item";
+@use "./_modules/_result-footer";
+@use "./_modules/_recommend-layard-btn";
+
+@use "./_modules/_prev-btn-box";
+@use "./_modules/_prev-btn";
+
+@use "./_modules/_another-links";
+@use "./_modules/_logo";
+
+// $IMG_PATH はgulpfileで定義されているグローバルSass変数です。画像のパスが入っています。
+// モジュール化する場合はスコープの関係でエラーになるので@importを使ってください。
+// body {
+// background: url(#{$IMG_PATH+'dummy.png'});
+// }
+
+@include m.css_wrapper {
+  .is-pc {
+    @include m.sp {
+      display: none !important;
+    }
+  }
+  .is-sp {
+    @include m.pc {
+      display: none !important;
+    }
+  }
+
+  .text-space-zero {
+    letter-spacing: -0.17em;
+  }
+}
