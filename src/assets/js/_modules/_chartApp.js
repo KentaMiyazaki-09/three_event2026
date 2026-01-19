@@ -62,14 +62,14 @@ class chartApp {
   showResultByURLParams = async () => {
     const params = new URLSearchParams(window.location.search);
     const recommend = Number(params.get("recommend"));
-    const favo = Number(params.get("favo"));
+    const showResult = Number(params.get("showResult"));
 
     const isRecommendValid = recommend >= -6 && recommend <= 6;
-    const isFavoValid = favo >= 1 && favo <= 3;
+    const isShowResult = showResult === 1;
 
-    if (isRecommendValid && isFavoValid) {
+    if (isRecommendValid && isShowResult) {
+      
       this.totalPoint.push(recommend);
-      this.favo = favo;
       this.isStart = false;
       this.isQuestion = false;
       this.loading = false;

@@ -92,7 +92,7 @@ const toggleQuestionHeadernum = (
 
   // サークルのアニメーション
   if (questionHeaderElement) {
-    const progress = questionNum / 4;
+    const progress = questionNum / 3;
     const offset = circleTotalLength * (1 - progress);
     questionHeaderCircleElement.style.strokeDashoffset = offset;
   }
@@ -127,97 +127,37 @@ const toggleResult = async (isResult, totalPoint, favo, appInstance) => {
     // 01 flower
     if (point === -3 || point === -4) {
       bgColor = "RELAXING";
-      switch (favo) {
-        case 1:
-          ID = "result-flower-woody";
-          break;
-        case 2:
-          ID = "result-flower-spicy";
-          break;
-        case 3:
-          ID = "result-flower-clean";
-          break;
-      }
+      ID = "result-flower";
     }
 
     // 02 trees
     if (point === -5 || point === -6) {
       bgColor = "RELAXING";
-      switch (favo) {
-        case 1:
-          ID = "result-trees-floral";
-          break;
-        case 2:
-          ID = "result-trees-spicy";
-          break;
-        case 3:
-          ID = "result-trees-clean";
-          break;
-      }
+      ID = "result-trees";
     }
 
     // 03 beret
     if (point === 4 || point === 3) {
       bgColor = "INSPIRING";
-      switch (favo) {
-        case 1:
-          ID = "result-beret-floral";
-          break;
-        case 2:
-          ID = "result-beret-spicy";
-          break;
-        case 3:
-          ID = "result-beret-clean";
-          break;
-      }
+      ID = "result-beret";
     }
 
     // 04 eden
     if (point === 6 || point === 5) {
       bgColor = "INSPIRING";
-      switch (favo) {
-        case 1:
-          ID = "result-eden-floral";
-          break;
-        case 2:
-          ID = "result-eden-fruity";
-          break;
-        case 3:
-          ID = "result-eden-clean";
-          break;
-      }
+      ID = "result-eden";
     }
 
     // 00 stone
     if (point === 2 || point === 1) {
       bgColor = "NEUTRAL";
-      switch (favo) {
-        case 1:
-          ID = "result-stone-floral";
-          break;
-        case 2:
-          ID = "result-stone-spicy";
-          break;
-        case 3:
-          ID = "result-stone-earthy";
-          break;
-      }
+      ID = "result-stone";
     }
 
     // 05 rain
     if (point === 0 || point === -1 || point === -2) {
       bgColor = "NEUTRAL";
-      switch (favo) {
-        case 1:
-          ID = "result-rain-floral";
-          break;
-        case 2:
-          ID = "result-rain-spicy";
-          break;
-        case 3:
-          ID = "result-rain-clean";
-          break;
-      }
+      ID = "result-rain";
     }
 
     appInstance.resultID = ID;

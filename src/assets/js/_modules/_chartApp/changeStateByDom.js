@@ -20,12 +20,12 @@ const answerButtons = (appInstance) => {
       const element = el.currentTarget;
 
       /* 質問３まではポイント計算 */
-      if (appInstance.questionNum <= 3) {
+      if (appInstance.questionNum <= 2) {
         appInstance.totalPoint.push(parseInt(element.dataset.point, 10));
         appInstance.questionNum += 1;
       } else {
         /* 質問4はタイプを選択 */
-        appInstance.favo = parseInt(element.dataset.favo, 10);
+        // appInstance.favo = parseInt(element.dataset.favo, 10);
 
         /* 質問4以上の場合はローディングを表示 */
         // appInstance.loading = true;
