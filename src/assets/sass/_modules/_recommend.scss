@@ -4,31 +4,13 @@
 @include m.css_wrapper {
   .recommend {
     display: flex;
-
-    @include m.sp{
-      flex-wrap: wrap;
-      > * {
-        width: 100%;
-      }
-    }
-    @include m.pc{
-      align-items: center;
-      justify-content: space-between;
-      padding: 195px 0;
-    }
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
   }
 
   .recommend__ttl {
     margin-bottom: 30px;
-    @include m.sp{
-      text-align: center;
-    }
-    @include m.pc{
-      width: 32%;
-    }
-    @media screen and (max-width: 375px) and (max-height: 667px) {
-      margin-bottom: 20px;
-    }
     > p {
       font-size: 15px;
       margin-bottom: 10px;
@@ -76,12 +58,7 @@
 
   .recommend__img {
     position: relative;
-    @include m.sp{
-      margin: 0 25px 50px;
-    }
-    @include m.pc{
-      width: 36%;
-    }
+    width: 50%;
     &__item {
       z-index: 0;
       position: relative;
@@ -98,10 +75,7 @@
   }
 
   .recommend__info {
-    @include m.pc{
-      width: 30%;
-      margin-left: 20px;
-    }
+    width: 50%;
     &__lead {
       font-size: 13px;
       line-height: 1.5;
@@ -119,6 +93,41 @@
       }
       @include m.pc{
         max-width: 150px;
+      }
+    }
+  }
+
+  .recommend__ttl-en {
+    font-size: 15px;
+    line-height: 1;
+    color: #A6A6A6;
+    margin-bottom: 15px;
+  }
+  .recommend__lead-en {
+    font-size: 12px;
+    color: #A6A6A6;
+    margin-bottom: 50px;
+  }
+
+  .recommend__qr {
+    display: flex;
+    align-items: center;
+
+    &__img {
+      width: 73px;
+      margin-right: 30px;
+    }
+
+    &__text {
+      width: calc(100% - 73px);
+      line-height: 1;
+      &__ttl {
+        font-size: 11px;
+        margin-bottom: 10px;
+      }
+      &__lead {
+        font-size: 10px;
+        color: #A6A6A6;
       }
     }
   }

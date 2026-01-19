@@ -34,9 +34,9 @@ class chartApp {
     this.loading = false;
     this.isResult = false; // result画面の表示
 
-    this.isStart = false; // スタート画面の表示
-    this.isQuestion = true; // 質問画面の表示
-    this.questionNum = 3; // 現在の質問 1to3
+    // this.isStart = false; // スタート画面の表示
+    // this.isQuestion = true; // 質問画面の表示
+    // this.questionNum = 3; // 現在の質問 1to3
 
     // 前に戻るトリガー
     this.prevPoint = 0;

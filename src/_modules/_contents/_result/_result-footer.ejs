@@ -1,25 +1,10 @@
 <div class="result-footer">
-  <div class="result-footer__link-btn-box">
-    <%- include("../_link-btn.ejs") %>
-  </div>
 
   <div class="result-footer__restart-btn-box">
     <button type="button" class="restart-btn">
-      <span class="restart-btn__text">もう一度探す</span>
+      <span class="restart-btn__text">Try Again</span>
       <img src="<%= IMAGE_PATH %>icon_circle.png" alt="">
     </button>
-  </div>
-
-  <div class="result-footer__flex-box">
-    <%- include("../_another-links.ejs") %>
-    <%
-      const isParamsValid = (typeof params !== "undefined") ? params : "recommend=-4&favo=1"
-      const isTtlValid = (typeof ttl !== "undefined") ? ttl : "〈花〉01 LIKE A FLOWER"
-    %>
-    <%- include("../_share-list.ejs", {
-      params: isParamsValid,
-      ttl: isTtlValid,
-    }) %>
   </div>
 
 </div>

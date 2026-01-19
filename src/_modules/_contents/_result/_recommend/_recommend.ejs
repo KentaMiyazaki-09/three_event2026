@@ -1,15 +1,4 @@
 <div class="recommend">
-  <div class="recommend__ttl">
-    <p>あなたにおすすめの香りは...</p>
-    <h2><%= ttl %></h2>
-  </div>
-
-  <div class="recommend__info-header is-sp">
-    <div class="recommend__info-header__tag-box">
-      <p class="recommend__info-header__tag"><%- header.tag %></p>
-    </div>
-    <h3 class="recommend__info-header__ttl"><%- header.ttl %></h3>
-  </div>
 
   <div class="recommend__img">
     <img class="recommend__img__item" src="<%= IMAGE_PATH %>item/<%- img.item %>" alt="">
@@ -17,22 +6,30 @@
   </div>
 
   <div class="recommend__info">
-    <div class="recommend__info-header is-pc">
+    <div class="recommend__ttl">
+      <p>あなたにおすすめの香りは...</p>
+      <h2><%= ttl %></h2>
+    </div>
+    <div class="recommend__info-header">
       <div class="recommend__info-header__tag-box">
         <p class="recommend__info-header__tag"><%- header.tag %></p>
       </div>
       <h3 class="recommend__info-header__ttl"><%- header.ttl %></h3>
     </div>
-
     <p class="recommend__info__lead"><%- info.lead %></p>
-    <p class="recommend__info__price"><%- info.price %></p>
-    <div class="recommend__info__links">
-      <%- include("../../_link.ejs", {
-        href: info.links10ml
-      }) %>
-    </div>
 
-    <%- include("../../_recommend-layard-btn.ejs") %>
+    <p class="recommend__ttl-en"><%- ttlEn %></p>
+    <p class="recommend__lead-en"><%- leadEn %></p>
+
+    <div class="recommend__qr">
+      <div class="recommend__qr__img">
+        <img src="<%= IMAGE_PATH %>item/<%- qr.img %>" alt="">
+      </div>
+      <div class="recommend__qr__text">
+        <p class="recommend__qr__text__ttl"><%- qr.ttl %></p>
+        <p class="recommend__qr__text__lead"><%- qr.lead %></p>
+      </div>
+    </div>
 
   </div>
 </div>
