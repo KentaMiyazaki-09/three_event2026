@@ -9,9 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
  */
 const toggleStart = (isStart) => {
   document.getElementById("start-modal").classList.toggle("active", isStart);
-
-  // グラデーション　gray
-  document.querySelector(".gradations").classList.toggle("is-gray", isStart);
 };
 
 /**
@@ -23,11 +20,6 @@ const toggleQuestion = (isQuestion) => {
   document
     .getElementById("question-modal")
     .classList.toggle("active", isQuestion);
-
-  // グラデーション　question
-  document
-    .querySelector(".gradations")
-    .classList.toggle("is-question", isQuestion);
 };
 
 /*
@@ -170,46 +162,21 @@ const toggleResult = async (isResult, totalPoint, favo, appInstance) => {
     setTimeout(() => {
       document.getElementById(ID).classList.add("animation");
     }, 500);
-
-    const btn = document.getElementById(ID).querySelector(".goToBtn");
-
-    // スクロールトリガーを付与
-    const targetLayered = btn.nextElementSibling;
-
-    appInstance.scrollTrigger = ScrollTrigger.create({
-      scroller: document.querySelector(".result"),
-      trigger: targetLayered,
-      start: "top-=180 center",
-      toggleClass: { targets: btn, className: "hide" },
-      once: true,
-    });
-
-    appInstance.scrollTriggerCanvas = gsap.to(`.gradations__item--${bgColor}`, {
-      scale: 2.5,
-      ease: "none",
-      scrollTrigger: {
-        scroller: document.querySelector(".result"),
-        trigger: targetLayered,
-        start: "top-=150 center",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
   } else {
-    if (appInstance.scrollTrigger) {
-      appInstance.scrollTrigger.kill();
-      document.querySelectorAll(".goToBtn").forEach((btn) => {
-        btn.classList.remove("hide");
-      });
-    }
+    // if (appInstance.scrollTrigger) {
+    //   appInstance.scrollTrigger.kill();
+    //   document.querySelectorAll(".goToBtn").forEach((btn) => {
+    //     btn.classList.remove("hide");
+    //   });
+    // }
 
-    if (appInstance.scrollTriggerCanvas) {
-      appInstance.scrollTriggerCanvas.kill();
+    // if (appInstance.scrollTriggerCanvas) {
+    //   appInstance.scrollTriggerCanvas.kill();
 
-      gsap.set(`.gradations__item--${appInstance.bgColor}`, {
-        clearProps: "all",
-      });
-    }
+    //   gsap.set(`.gradations__item--${appInstance.bgColor}`, {
+    //     clearProps: "all",
+    //   });
+    // }
 
     if (appInstance.resultID.match(/.+/)) {
       document.getElementById(appInstance.resultID).classList.remove("active");

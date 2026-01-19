@@ -3,28 +3,16 @@
 
 @mixin canvaStyle {
   opacity: 1;
-  width: 140%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  top: 50%;
-  left: -20%;
-  translate: 0% -50%;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  translate: 0% 0%;
   overflow: hidden;
   position: relative;
   > canvas {
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    margin: auto;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-  }
-  @media screen and (min-width: 600px) {
-    width: 110%;
-    left: -5%;
-  }
-  @media screen and (min-width: 769px) {
-    width: 90%;
-    left: 5%;
+    width: 100%;
+    height: 100%;
   }
 
   &::before {
@@ -65,38 +53,6 @@
       }
     }
 
-    // トップ
-    &.is-gray {
-      .gradations__item--gray {
-        opacity: 1;
-      }
-    }
-
-    // 質問
-    @keyframes animation_fade_lineup {
-      0%{ opacity: 0; }
-      15%{ opacity: 1; } // 1.5s
-      60%{ opacity: 1; } // 6.0s
-      75%{ opacity: 0; } // 7.5s
-      100%{ opacity: 0; } // 10s
-    }
-    &.is-question {
-      .gradations__item--RELAXING {
-        animation: animation_fade_lineup 15s infinite;
-        opacity: 0;
-      }
-      .gradations__item--NEUTRAL {
-        animation: animation_fade_lineup 15s infinite;
-        animation-delay: 5s;
-        opacity: 0;
-      }
-      .gradations__item--INSPIRING {
-        animation: animation_fade_lineup 15s infinite;
-        animation-delay: 10s;
-        opacity: 0;
-      }
-    }
-
     // 結果
     &.is-gradient-canvas-RELAXING {
       .gradations__item--RELAXING {
@@ -112,13 +68,6 @@
       .gradations__item--INSPIRING {
         @include canvaStyle;
       }
-    }
-
-    #gradient-canvas-gray {
-      --gradient-color-1: #ebffeb;
-      --gradient-color-2: #e7edf9;
-      --gradient-color-3: #ffefdb;
-      --gradient-color-4: #ffffff;
     }
 
     #gradient-canvas-RELAXING {
