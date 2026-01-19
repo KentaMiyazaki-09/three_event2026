@@ -16,93 +16,17 @@
     align-items: center;
     justify-content: center;
 
-
-    &__bg-circle {
-      z-index: 0;
+    &__bg {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-
-      width: 580px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
 
       > img {
         width: 100%;
-        height: auto;
-      }
-
-       @include m.sp {
-        width: 95vw;
-        height: 140vh;
-      }
-      @include m.pc {
-        width: 870px;
-      }
-    }
-
-    &__material {
-      z-index: 9;
-      position: absolute;
-      left: 50%;
-      line-height: 1;
-      font-size: 0;
-      &--1 {
-        bottom: 51.8%;
-        width: 281px;
-        translate: -94% -34%;
-        @include m.pc{
-          width: 292px;
-          translate: -174% 4%;
-        }
-      }
-      &--2 {
-        bottom: 50%;
-        width: 146px;
-        translate: -66% -135%;
-        @include m.pc{
-          width: 262px;
-          translate: -114% -62%;
-        }
-      }
-      &--3 {
-        bottom: 50%;
-        width: 238px;
-        translate: 21% -64%;
-        @include m.pc{
-          width: 292px;
-          translate: 61% -70%;
-        }
-      }
-      &--4 {
-        top: 50%;
-        width: 203px;
-        translate: -155% 60%;
-        @include m.pc{
-          width: 350px;
-          translate: 44% -34%;
-        }
-      }
-      &--5 {
-        top: 50%;
-        width: 109px;
-        translate: -134% 210%;
-        @include m.pc{
-          width: 225px;
-          translate: 73% 94%;
-        }
-      }
-      &--6 {
-        top: 50%;
-        width: 250px;
-        translate: -8% 43%;
-        @include m.pc{
-          width: 348px;
-          translate: -149% 12%;
-        }
+        height: 100%;
+        object-fit: cover;
       }
     }
 
@@ -116,44 +40,11 @@
       }
     }
 
-    &.has-animation {
-      .start-modal__material {
-        opacity: 0;
-      }
-      &.is-loaded {
-        .start-modal__material {
-          transition: opacity 1.4s ease;
-          opacity: 1;
-          @include m.sp{
-            &--1,
-            &--6 {
-              transition-delay: 0.4s;
-            }
-            &--3,
-            &--4 {
-              transition-delay: 0.8s;
-            }
-            &--2,
-            &--5 {
-              transition-delay: 1.2s;
-            }
-          }
-          @include m.pc{
-            &--1,
-            &--4 {
-              transition-delay: 0.4s;
-            }
-            &--3,
-            &--6 {
-              transition-delay: 0.8s;
-            }
-            &--2,
-            &--5 {
-              transition-delay: 1.2s;
-            }
-          }
-        }
-      }
-    }
+    // &.has-animation {
+    //   &.is-loaded {
+    //   }
+    // }
   }
+
+
 }

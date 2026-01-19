@@ -24,12 +24,6 @@ const answerButtons = (appInstance) => {
         appInstance.totalPoint.push(parseInt(element.dataset.point, 10));
         appInstance.questionNum += 1;
       } else {
-        /* 質問4はタイプを選択 */
-        // appInstance.favo = parseInt(element.dataset.favo, 10);
-
-        /* 質問4以上の場合はローディングを表示 */
-        // appInstance.loading = true;
-
         /* 結果画面を表示 */
         appInstance.isQuestion = false;
         appInstance.isResult = true;
@@ -98,9 +92,6 @@ const questionFooterLogo = (appInstance) => {
     appInstance.loading = false;
     appInstance.isResult = false;
     appInstance.changeDomByState();
-
-    // テスト用
-    removeTotalPoint();
   });
 };
 
@@ -118,9 +109,6 @@ const resultLogo = (appInstance) => {
     appInstance.loading = false;
     appInstance.isResult = false;
     appInstance.changeDomByState();
-
-    // テスト用
-    removeTotalPoint();
   });
 };
 
