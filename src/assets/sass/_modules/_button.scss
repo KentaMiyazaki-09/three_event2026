@@ -7,9 +7,8 @@
     display: block;
 
     &.is-hover {
-      font-size: 11px;
-      &::before {
-        transform: scale(4.2);
+      .button__check {
+        background-color: #4B4B4B;
       }
     }
 
