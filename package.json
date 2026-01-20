@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "NODE_ENV=development NODE_IMAGE_PATH='/assets/img/' gulp start",
-    "build": "NODE_ENV=production NODE_IMAGE_PATH='/cms/img/usr/news/2026/01/fragrance-finder-event2026/' gulp build"
+    "build": "NODE_ENV=production NODE_IMAGE_PATH='/cms/img/usr/news/2026/01/SentF-event2026/' gulp build"
   },
   "keywords": [],
   "author": "",

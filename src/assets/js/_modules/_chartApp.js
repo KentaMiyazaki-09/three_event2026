@@ -81,10 +81,10 @@ class chartApp {
       this.changeDomByState();
 
       await this.tick(500);
-      document.querySelector(".three-25FC").classList.add("is-loaded");
+      document.querySelector(".three-event26").classList.add("is-loaded");
     } else {
       await this.tick(1500);
-      document.querySelector(".three-25FC").classList.add("is-loaded");
+      document.querySelector(".three-event26").classList.add("is-loaded");
     }
   };
 
