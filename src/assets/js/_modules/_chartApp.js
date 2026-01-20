@@ -7,6 +7,7 @@ import {
   toggleResult,
   togglePrevBtn,
 } from "./_chartApp/changeDomByState";
+
 import {
   startButton,
   answerButtons,

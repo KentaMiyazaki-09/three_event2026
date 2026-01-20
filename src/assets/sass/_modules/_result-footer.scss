@@ -4,30 +4,8 @@
 @include m.css_wrapper {
   .result-footer {
 
-    &__link-btn-box {
-      margin-bottom: 40px;
-      @include m.pc{
-        max-width: 325px;
-        margin: 0 auto 50px;
-      }
-    }
-
     &__restart-btn-box {
       text-align: center;
-      margin-bottom: 40px;
-      @include m.pc{
-        margin-bottom: 50px;
-      }
-    }
-
-    &__flex-box {
-      @include m.pc{
-        border-top: 0.5px solid #4B4B4B;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 50px;
-      }
     }
 
   }
