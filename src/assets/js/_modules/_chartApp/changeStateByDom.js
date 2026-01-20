@@ -97,6 +97,9 @@ const questionFooterLogo = (appInstance) => {
     appInstance.loading = false;
     appInstance.isResult = false;
     appInstance.changeDomByState();
+
+    // test
+    document.querySelector("#test-point").innerHTML = "0"
   });
 };
 
@@ -114,6 +117,9 @@ const resultLogo = (appInstance) => {
     appInstance.loading = false;
     appInstance.isResult = false;
     appInstance.changeDomByState();
+
+    // test
+    document.querySelector("#test-point").innerHTML = "0"
   });
 };
 
