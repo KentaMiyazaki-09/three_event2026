@@ -1,3 +1,11 @@
+/**
+ * 点数テスト用の関数
+ * @param { Array<Number> } totalPoint[]
+ */
+const ApplyValueToTest = (value) => {
+  document.querySelector("#test-point").innerHTML = value
+}
+
 /* スタートボタン */
 const startButton = (appInstance) => {
   const startButtonElemenet = document.getElementById("start-button");
@@ -23,8 +31,8 @@ const answerButtons = (appInstance) => {
       const point = parseInt(element.dataset.point, 10)
       appInstance.totalPoint.push(point);
 
-      // test
-      document.querySelector("#test-point").innerHTML = appInstance.totalPoint.reduce((acc, cur) => acc + cur)
+      // test 合計点
+      ApplyValueToTest(appInstance.totalPoint.reduce((acc, cur) => acc + cur));
 
       appInstance.questionNum += 1;
 
@@ -67,6 +75,9 @@ const restartButton = (appInstance) => {
       const url = new URL(window.location.href);
       url.search = ""; // ?xxx=u¥yyy削除
       window.history.replaceState({}, document.title, url.toString());
+
+      // test 合計点りセット
+      ApplyValueToTest("0");
     });
   });
 };
@@ -80,6 +91,12 @@ const prevButton = (appInstance) => {
     appInstance.questionNum -= 1;
     appInstance.totalPoint.pop();
     appInstance.changeDomByState();
+
+    console.log(appInstance.totalPoint);
+    
+    // test 合計点
+    const testRealValue = appInstance.questionNum > 1 ? appInstance.totalPoint.reduce((acc, cur) => acc + cur) : "0"
+    ApplyValueToTest(testRealValue);
   });
 };
 
@@ -98,8 +115,8 @@ const questionFooterLogo = (appInstance) => {
     appInstance.isResult = false;
     appInstance.changeDomByState();
 
-    // test
-    document.querySelector("#test-point").innerHTML = "0"
+    // test 合計点りセット
+    ApplyValueToTest("0");
   });
 };
 
@@ -118,8 +135,8 @@ const resultLogo = (appInstance) => {
     appInstance.isResult = false;
     appInstance.changeDomByState();
 
-    // test
-    document.querySelector("#test-point").innerHTML = "0"
+    // test 合計点りセット
+    ApplyValueToTest("0");
   });
 };
 
