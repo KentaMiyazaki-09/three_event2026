@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 0 85px;
+    padding: 80px 0 55px;
   }
 
   .recommend__ttl {
@@ -90,11 +90,11 @@
     align-items: center;
 
     &__img {
-      width: 73px;
+      width: 103px;
     }
 
     &__text {
-      width: calc(100% - 93px);
+      width: calc(100% - 123px);
       padding-left: 20px;
       line-height: 1;
       &__ttl {
